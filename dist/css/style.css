@@ -1020,17 +1020,87 @@ html.menu-open .header__btnlink {
   -webkit-text-stroke: 3px #000000;
 }
 
+.help {
+  position: relative;
+  cursor: url("../img/help/help-green-cursor.png"), auto;
+}
+
+.help a,
+.help button {
+  cursor: url("../img/help/help-green-cursor.png"), auto;
+}
+
 .help__container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
+  gap: 25px;
 }
 
 .help__picture {
   position: relative;
   -ms-grid-column-align: center;
       justify-self: center;
+}
+
+.help__picture .help__man {
+  width: 100%;
+  height: auto;
+}
+
+.help__picture .help__green-hand {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  z-index: -1;
+  width: 20%;
+  height: auto;
+}
+
+.help__picture .help__yellow-hand {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+  width: 20%;
+  height: auto;
+}
+
+.help__picture .help__black-dots {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  z-index: -1;
+  width: 20%;
+  height: auto;
+}
+
+.help__picture .help__blue-yellow {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  z-index: -1;
+  width: 15%;
+  height: auto;
+}
+
+.help__picture .help__yellow-star {
+  position: absolute;
+  left: 50%;
+  bottom: -15%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.help__picture .help__yellow-star-second {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
 }
 
 .help__picture::after {
@@ -1041,11 +1111,11 @@ html.menu-open .header__btnlink {
       -ms-transform: translate(-50%);
           transform: translate(-50%);
   content: "";
-  width: 500px;
-  height: 500px;
+  width: clamp(250px, 80vw, 500px);
+  height: clamp(250px, 80vw, 500px);
   border-radius: 50%;
   background-color: #E7D9B0;
-  z-index: -1;
+  z-index: -2;
 }
 
 .help__text {
@@ -1133,6 +1203,7 @@ html.menu-open .header__btnlink {
 }
 
 .help__input {
+  width: 100%;
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
@@ -1169,6 +1240,18 @@ html.menu-open .header__btnlink {
   line-height: 31px;
   letter-spacing: -0.022em;
   color: #000000;
+}
+
+.help::after {
+  content: "";
+  position: absolute;
+  right: -20%;
+  top: 20%;
+  width: clamp(150px, 50vw, 400px);
+  height: clamp(150px, 50vw, 400px);
+  border-radius: 50%;
+  background-color: #FFF7DC;
+  z-index: -2;
 }
 
 @-webkit-keyframes item-slide {
@@ -1694,6 +1777,21 @@ html.menu-open .header__btnlink {
 
   .clients__container {
     min-height: 90px;
+  }
+
+  .help__container {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .help__picture {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .help__text {
+    width: 100%;
   }
 }
 
