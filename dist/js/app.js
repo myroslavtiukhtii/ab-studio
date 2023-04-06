@@ -2887,6 +2887,31 @@
             }));
         }
     }), 0);
+    window.onscroll = function() {
+        scrollFunction();
+    };
+    function scrollFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) document.querySelector(".header").style.background = "#fcf6e494"; else document.querySelector(".header").style.background = "transparent";
+    }
+    function reveal() {
+        let reveals = document.querySelectorAll(".reveal");
+        for (let i = 0; i < reveals.length; i++) {
+            let windowHeight = window.innerHeight;
+            let elementTop = reveals[i].getBoundingClientRect().top;
+            let elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) reveals[i].classList.add("active"); else reveals[i].classList.remove("active");
+        }
+    }
+    window.addEventListener("scroll", reveal);
+    document.addEventListener("mousemove", parallax);
+    function parallax(event) {
+        this.querySelectorAll(".mouse").forEach((shift => {
+            const position = shift.getAttribute("value");
+            const x = (window.innerWidth - event.pageX * position) / 90;
+            const y = (window.innerHeight - event.pageY * position) / 90;
+            shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        }));
+    }
     window["FLS"] = true;
     isWebp();
     menuInit();
