@@ -456,7 +456,7 @@ html.menu-open .header__btnlink {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
-  line-height: 30px;
+  line-height: 15px;
   color: #1D1515;
 }
 
@@ -1988,6 +1988,14 @@ html.menu-open .header__btnlink {
     font-size: 1.25rem;
   }
 
+  .about__paused .about__playbtn__image {
+    width: 4rem;
+  }
+
+  .about__paused .about__playbtn__image {
+    height: 4rem;
+  }
+
   .about__picture::before {
     font-size: 2.5rem;
   }
@@ -2234,7 +2242,15 @@ html.menu-open .header__btnlink {
   }
 
   .about__paused .paused__title {
-    font-size: 0.9375rem;
+    font-size: 0.625rem;
+  }
+
+  .about__paused .about__playbtn__image {
+    width: 2.125rem;
+  }
+
+  .about__paused .about__playbtn__image {
+    height: 2.125rem;
   }
 
   .about__picture::before {
@@ -2474,7 +2490,7 @@ html.menu-open .header__btnlink {
     transition: 0.5s ease-out;
     -webkit-clip-path: polygon(26% 0, 100% 0%, 75% 100%, 0% 100%);
             clip-path: polygon(26% 0, 100% 0%, 75% 100%, 0% 100%);
-    z-index: 5;
+    z-index: 10;
   }
 
   .header__list {
@@ -2493,12 +2509,7 @@ html.menu-open .header__btnlink {
   }
 
   .header__btnlink {
-    position: absolute;
-    top: 450%;
-    left: -100%;
-    -webkit-transition: 0.5s ease-out;
-    -o-transition: 0.5s ease-out;
-    transition: 0.5s ease-out;
+    display: none;
   }
 
   .icon-menu {
@@ -2506,7 +2517,7 @@ html.menu-open .header__btnlink {
     position: relative;
     width: 1.875rem;
     height: 1.25rem;
-    z-index: 5;
+    z-index: 10;
   }
 
   .icon-menu span,
@@ -2572,13 +2583,10 @@ html.menu-open .header__btnlink {
     -webkit-text-stroke: 3px #000000;
   }
 
-  .about__btnlink {
-    position: absolute;
-    top: 450%;
-    left: -100%;
-    -webkit-transition: 0.5s ease-out;
-    -o-transition: 0.5s ease-out;
-    transition: 0.5s ease-out;
+  .about__buttons {
+    -webkit-column-gap: 25px;
+       -moz-column-gap: 25px;
+            column-gap: 25px;
   }
 
   .about__picture::before {
@@ -2731,15 +2739,39 @@ html.menu-open .header__btnlink {
     }
 }
 
-@supports (font-size: clamp( 0.9375rem , 0.8238636364rem  +  0.5681818182vw , 1.25rem )) {
+@supports (font-size: clamp( 0.625rem , 0.3977272727rem  +  1.1363636364vw , 1.25rem )) {
     .about__paused .paused__title {
-      font-size: clamp( 0.9375rem , 0.8238636364rem  +  0.5681818182vw , 1.25rem );
+      font-size: clamp( 0.625rem , 0.3977272727rem  +  1.1363636364vw , 1.25rem );
     }
 }
 
-@supports not (font-size: clamp( 0.9375rem , 0.8238636364rem  +  0.5681818182vw , 1.25rem )) {
+@supports not (font-size: clamp( 0.625rem , 0.3977272727rem  +  1.1363636364vw , 1.25rem )) {
     .about__paused .paused__title {
-      font-size: calc(0.9375rem + 0.3125 * (100vw - 20rem) / 55);
+      font-size: calc(0.625rem + 0.625 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (width: clamp( 2.125rem , 1.4431818182rem  +  3.4090909091vw , 4rem )) {
+    .about__paused .about__playbtn__image {
+      width: clamp( 2.125rem , 1.4431818182rem  +  3.4090909091vw , 4rem );
+    }
+}
+
+@supports not (width: clamp( 2.125rem , 1.4431818182rem  +  3.4090909091vw , 4rem )) {
+    .about__paused .about__playbtn__image {
+      width: calc(2.125rem + 1.875 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (height: clamp( 2.125rem , 1.4431818182rem  +  3.4090909091vw , 4rem )) {
+    .about__paused .about__playbtn__image {
+      height: clamp( 2.125rem , 1.4431818182rem  +  3.4090909091vw , 4rem );
+    }
+}
+
+@supports not (height: clamp( 2.125rem , 1.4431818182rem  +  3.4090909091vw , 4rem )) {
+    .about__paused .about__playbtn__image {
+      height: calc(2.125rem + 1.875 * (100vw - 20rem) / 55);
     }
 }
 
