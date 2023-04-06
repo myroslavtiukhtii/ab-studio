@@ -2890,8 +2890,19 @@
     window.onscroll = function() {
         scrollFunction();
     };
+    let scrollTimer = -1;
+    const HEADER = document.querySelector(".header");
     function scrollFunction() {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) document.querySelector(".header").style.background = "#fcf6e494"; else document.querySelector(".header").style.background = "transparent";
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            HEADER.style.background = "#fcf6e494";
+            HEADER.style.top = "-100%";
+            if (-1 != scrollTimer) console.log(scrollTimer);
+            clearTimeout(scrollTimer);
+            scrollTimer = window.setTimeout(scrollFinished, 400);
+            function scrollFinished() {
+                HEADER.style.top = "0";
+            }
+        }
     }
     function reveal() {
         let reveals = document.querySelectorAll(".reveal");

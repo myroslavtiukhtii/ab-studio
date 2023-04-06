@@ -160,9 +160,9 @@ a {
   left: 0;
   z-index: 10;
   min-height: 5.625rem;
-  -webkit-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  -webkit-transition: all 2.5s ease-in;
+  -o-transition: all 2.5s ease-in;
+  transition: all 2.5s ease-in;
 }
 
 .header__container {
@@ -1901,6 +1901,30 @@ html.menu-open .header__btnlink {
 }
 
 @keyframes blueyellowTransition {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes headerAnimation {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes headerAnimation {
   0% {
     top: -100%;
     opacity: 0;
