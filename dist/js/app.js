@@ -2893,16 +2893,33 @@
     let scrollTimer = -1;
     const HEADER = document.querySelector(".header");
     function scrollFunction() {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            HEADER.style.background = "#fcf6e494";
+        if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
             HEADER.style.top = "-100%";
-            if (-1 != scrollTimer) console.log(scrollTimer);
-            clearTimeout(scrollTimer);
-            scrollTimer = window.setTimeout(scrollFinished, 400);
-            function scrollFinished() {
-                HEADER.style.top = "0";
+            showUpBtn();
+            if (scrollTimer = -1) {
+                clearTimeout(scrollTimer);
+                scrollTimer = window.setTimeout(scrollFinished, 900);
             }
+        } else {
+            HEADER.style.background = "transparent";
+            hideUpBtn();
         }
+    }
+    function scrollFinished() {
+        HEADER.style.top = "0";
+        HEADER.style.background = "#fcf6e494";
+    }
+    const UPBTN = document.querySelector(".about__upbtn");
+    UPBTN.addEventListener("click", windowUp);
+    function hideUpBtn() {
+        UPBTN.style.display = "none";
+    }
+    function showUpBtn() {
+        UPBTN.style.display = "flex";
+    }
+    function windowUp() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
     function reveal() {
         let reveals = document.querySelectorAll(".reveal");

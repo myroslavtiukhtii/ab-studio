@@ -145,6 +145,12 @@ svg path {
      object-fit: contain;
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   cursor: url("../img/about/about-cursor.png"), auto;
 }
@@ -565,7 +571,30 @@ html.menu-open .header__btnlink {
   top: -10%;
   background-color: #E7D9B0;
   border-radius: 50%;
-  z-index: -2;
+  z-index: -1;
+}
+
+.about__upbtn {
+  position: fixed;
+  bottom: 0.9375rem;
+  right: 0.9375rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 55px;
+  min-height: 55px;
+  font-size: 1.5625rem;
+  background-color: rgba(219, 192, 92, 0.3607843137);
+  color: rgba(0, 0, 0, 0.4470588235);
+  border: 1px solid #FDE034;
+  border-radius: 50%;
+  z-index: 10;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .no-webp .about::before{
@@ -629,7 +658,7 @@ html.menu-open .header__btnlink {
   -webkit-transform: translate(-50%);
       -ms-transform: translate(-50%);
           transform: translate(-50%);
-  z-index: -2;
+  z-index: -1;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -704,7 +733,7 @@ html.menu-open .header__btnlink {
   padding: 33px 35px;
   border: 4px solid #000;
   background-color: #699BF7;
-  z-index: -2;
+  z-index: -1;
 }
 
 .service__block {
@@ -1156,7 +1185,7 @@ html.menu-open .header__btnlink {
   height: clamp(250px, 80vw, 500px);
   border-radius: 50%;
   background-color: #E7D9B0;
-  z-index: -2;
+  z-index: -1;
 }
 
 .help__text {
@@ -1292,7 +1321,7 @@ html.menu-open .header__btnlink {
   height: clamp(150px, 50vw, 400px);
   border-radius: 50%;
   background-color: #FFF7DC;
-  z-index: -2;
+  z-index: -1;
 }
 
 .team {
@@ -1912,30 +1941,6 @@ html.menu-open .header__btnlink {
   }
 }
 
-@-webkit-keyframes headerAnimation {
-  0% {
-    top: -100%;
-    opacity: 0;
-  }
-
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes headerAnimation {
-  0% {
-    top: -100%;
-    opacity: 0;
-  }
-
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
 .swiper {
   overflow: hidden;
 }
@@ -2496,7 +2501,7 @@ html.menu-open .header__btnlink {
     top: 0;
     left: -100%;
     width: 100%;
-    height: 100dvh;
+    min-height: 100vh;
     padding: 25px;
     padding-top: 120px;
     display: -webkit-box;
@@ -3464,6 +3469,11 @@ html.menu-open .header__btnlink {
 
   .about__btnlink:hover .btnlink__arrow svg {
     fill: #FDE034;
+  }
+
+  .about__upbtn:hover {
+    background-color: #FDE034;
+    color: #000;
   }
 }
 
