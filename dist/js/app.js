@@ -2812,7 +2812,7 @@
             modules: [ Navigation ],
             observer: true,
             observeParents: true,
-            slidesPerView: 2,
+            slidesPerView: 2.2,
             spaceBetween: 10,
             autoHeight: true,
             speed: 800,
@@ -2846,7 +2846,7 @@
             observer: true,
             observeParents: true,
             slidesPerView: 1,
-            spaceBetween: 50,
+            spaceBetween: 30,
             autoHeight: true,
             speed: 800,
             navigation: {

@@ -151,14 +151,6 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  cursor: url("../img/about/about-cursor.png"), auto;
-}
-
-a {
-  cursor: url("../img/about/about-cursor.png"), auto;
-}
-
 .header {
   position: fixed;
   width: 100%;
@@ -753,6 +745,7 @@ html.menu-open .header__btnlink {
       -ms-flex-align: center;
           align-items: center;
   row-gap: 55px;
+  z-index: 1;
 }
 
 .service__name {
@@ -1134,7 +1127,7 @@ html.menu-open .header__btnlink {
   position: absolute;
   top: 50%;
   left: 0;
-  z-index: -1;
+  z-index: 1;
   width: 20%;
   height: auto;
 }
@@ -1331,6 +1324,7 @@ html.menu-open .header__btnlink {
 .team {
   position: relative;
   background-color: #F9D969;
+  padding-bottom: 120px;
   z-index: 1;
 }
 
@@ -1442,8 +1436,9 @@ html.menu-open .header__btnlink {
 
 .team__picture {
   position: relative;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   justify-self: flex-end;
   border-radius: 50%;
   border: 5px solid #000000;
@@ -1460,15 +1455,20 @@ html.menu-open .header__btnlink {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transform: rotate(26.05deg);
-      -ms-transform: rotate(26.05deg);
-          transform: rotate(26.05deg);
+  -webkit-animation: footerCircleHover 20.5s linear infinite;
+          animation: footerCircleHover 20.5s linear infinite;
 }
 
 .team__picture .team__picture__images {
   width: 100%;
   height: 100%;
   position: absolute;
+}
+
+.team__picture .team__picture__images [class*=images__person] {
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .team__picture .team__picture__images .team__images__person-1 {
@@ -1499,6 +1499,14 @@ html.menu-open .header__btnlink {
   position: absolute;
   bottom: -10%;
   left: 0;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.team__picture .team__picture__images .team__images__person-6 {
+  position: absolute;
+  bottom: -22%;
+  left: 60%;
   border-radius: 50%;
   border: 3px solid #fff;
 }
@@ -1945,6 +1953,30 @@ html.menu-open .header__btnlink {
   }
 }
 
+@-webkit-keyframes footerCircleHover {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes footerCircleHover {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -2090,7 +2122,7 @@ html.menu-open .header__btnlink {
   }
 
   .clients__item img {
-    height: 2.5rem;
+    height: 1.875rem;
   }
 
   .service {
@@ -2135,10 +2167,6 @@ html.menu-open .header__btnlink {
 
   .team {
     padding-top: 6.25rem;
-  }
-
-  .team {
-    padding-bottom: 6.25rem;
   }
 
   .team__subtitle {
@@ -2343,11 +2371,11 @@ html.menu-open .header__btnlink {
   }
 
   .clients__item img {
-    width: 5.625rem;
+    width: 5rem;
   }
 
   .clients__item img {
-    height: 1.875rem;
+    height: 1.25rem;
   }
 
   .service {
@@ -2392,10 +2420,6 @@ html.menu-open .header__btnlink {
 
   .team {
     padding-top: 3.125rem;
-  }
-
-  .team {
-    padding-bottom: 4.375rem;
   }
 
   .team__subtitle {
@@ -2646,7 +2670,7 @@ html.menu-open .header__btnlink {
   }
 
   .clients__container {
-    min-height: 90px;
+    min-height: 70px;
   }
 
   .help__container {
@@ -2976,27 +3000,27 @@ html.menu-open .header__btnlink {
     }
 }
 
-@supports (width: clamp( 5.625rem , 4.7159090909rem  +  4.5454545455vw , 8.125rem )) {
+@supports (width: clamp( 5rem , 3.8636363636rem  +  5.6818181818vw , 8.125rem )) {
     .clients__item img {
-      width: clamp( 5.625rem , 4.7159090909rem  +  4.5454545455vw , 8.125rem );
+      width: clamp( 5rem , 3.8636363636rem  +  5.6818181818vw , 8.125rem );
     }
 }
 
-@supports not (width: clamp( 5.625rem , 4.7159090909rem  +  4.5454545455vw , 8.125rem )) {
+@supports not (width: clamp( 5rem , 3.8636363636rem  +  5.6818181818vw , 8.125rem )) {
     .clients__item img {
-      width: calc(5.625rem + 2.5 * (100vw - 20rem) / 55);
+      width: calc(5rem + 3.125 * (100vw - 20rem) / 55);
     }
 }
 
-@supports (height: clamp( 1.875rem , 1.6477272727rem  +  1.1363636364vw , 2.5rem )) {
+@supports (height: clamp( 1.25rem , 1.0227272727rem  +  1.1363636364vw , 1.875rem )) {
     .clients__item img {
-      height: clamp( 1.875rem , 1.6477272727rem  +  1.1363636364vw , 2.5rem );
+      height: clamp( 1.25rem , 1.0227272727rem  +  1.1363636364vw , 1.875rem );
     }
 }
 
-@supports not (height: clamp( 1.875rem , 1.6477272727rem  +  1.1363636364vw , 2.5rem )) {
+@supports not (height: clamp( 1.25rem , 1.0227272727rem  +  1.1363636364vw , 1.875rem )) {
     .clients__item img {
-      height: calc(1.875rem + 0.625 * (100vw - 20rem) / 55);
+      height: calc(1.25rem + 0.625 * (100vw - 20rem) / 55);
     }
 }
 
@@ -3129,18 +3153,6 @@ html.menu-open .header__btnlink {
 @supports not (padding-top: clamp( 3.125rem , 1.9886363636rem  +  5.6818181818vw , 6.25rem )) {
     .team {
       padding-top: calc(3.125rem + 3.125 * (100vw - 20rem) / 55);
-    }
-}
-
-@supports (padding-bottom: clamp( 4.375rem , 3.6931818182rem  +  3.4090909091vw , 6.25rem )) {
-    .team {
-      padding-bottom: clamp( 4.375rem , 3.6931818182rem  +  3.4090909091vw , 6.25rem );
-    }
-}
-
-@supports not (padding-bottom: clamp( 4.375rem , 3.6931818182rem  +  3.4090909091vw , 6.25rem )) {
-    .team {
-      padding-bottom: calc(4.375rem + 1.875 * (100vw - 20rem) / 55);
     }
 }
 
@@ -3478,6 +3490,15 @@ html.menu-open .header__btnlink {
   .about__upbtn:hover {
     background-color: #FDE034;
     color: #000;
+  }
+
+  .team__picture:hover {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+
+  .team__picture .team__picture__images [class*=images__person]:hover {
+    scale: 1.5;
   }
 }
 
