@@ -2940,6 +2940,27 @@
             shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
         }));
     }
+    let leftItem = document.querySelector(".item-1"), rightItem = document.querySelector(".item-2");
+    (function() {
+        let throttle = function(type, name, obj) {
+            obj = obj || window;
+            let running = false;
+            let func = function() {
+                if (running) return;
+                running = true;
+                requestAnimationFrame((function() {
+                    obj.dispatchEvent(new CustomEvent(name));
+                    running = false;
+                }));
+            };
+            obj.addEventListener(type, func);
+        };
+        throttle("scroll", "optimizedScroll");
+    })();
+    window.addEventListener("optimizedScroll", (function() {
+        leftItem.style.transform = "rotate(-" + window.pageYOffset + "deg)";
+        rightItem.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    }));
     window["FLS"] = true;
     isWebp();
     menuInit();
