@@ -2940,7 +2940,8 @@
             shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
         }));
     }
-    let leftItem = document.querySelector(".item-1"), rightItem = document.querySelector(".item-2");
+    document.querySelector(".item-1"), document.querySelector(".item-2");
+    let testImage = document.querySelector(".item-3");
     (function() {
         let throttle = function(type, name, obj) {
             obj = obj || window;
@@ -2958,8 +2959,7 @@
         throttle("scroll", "optimizedScroll");
     })();
     window.addEventListener("optimizedScroll", (function() {
-        leftItem.style.transform = "rotate(-" + window.pageYOffset + "deg)";
-        rightItem.style.transform = "rotate(" + window.pageYOffset + "deg)";
+        testImage.style.transform = "scale(" + window.pageYOffset / 18 + "%)";
     }));
     window["FLS"] = true;
     isWebp();
