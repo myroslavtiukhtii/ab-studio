@@ -151,6 +151,27 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+body {
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+body.active {
+  color: #fff;
+  background-color: #5c6000 !important;
+}
+
+body.active h2,
+body.active p,
+body.active div {
+  color: #fff !important;
+}
+
+body.active section {
+  background-color: #5c6000 !important;
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -456,6 +477,10 @@ html.menu-open .header__btnlink {
   font-weight: 600;
   line-height: 15px;
   color: #1D1515;
+}
+
+.about__paused .about__playbtn__image {
+  cursor: pointer;
 }
 
 .about__picture {

@@ -2961,6 +2961,11 @@
     window.addEventListener("optimizedScroll", (function() {
         testImage.style.transform = "scale(" + window.pageYOffset / 18 + "%)";
     }));
+    const DARKBTN = document.querySelector(".about__playbtn");
+    DARKBTN.addEventListener("click", toogleDarkTheme);
+    function toogleDarkTheme() {
+        document.body.classList.toggle("active");
+    }
     window["FLS"] = true;
     isWebp();
     menuInit();
