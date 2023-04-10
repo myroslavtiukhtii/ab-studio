@@ -2962,9 +2962,12 @@
         testImage.style.transform = "scale(" + window.pageYOffset / 18 + "%)";
     }));
     const DARKBTN = document.querySelector(".about__playbtn");
+    const TEXT = document.querySelector(".paused__title");
     DARKBTN.addEventListener("click", toogleDarkTheme);
     function toogleDarkTheme() {
         document.body.classList.toggle("active");
+        DARKBTN.classList.toggle("active");
+        if (DARKBTN.classList.contains("active")) TEXT.innerHTML = "Black"; else TEXT.innerHTML = "White";
     }
     window["FLS"] = true;
     isWebp();
