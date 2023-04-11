@@ -2567,11 +2567,11 @@ html.menu-open .header__btnlink {
   }
 
   .team__picture {
-    width: 13.75rem;
+    width: 12.5rem;
   }
 
   .team__picture {
-    height: 13.75rem;
+    height: 12.5rem;
   }
 
   .team__picture .team__picture__images [class*=images__person] {
@@ -3372,27 +3372,27 @@ html.menu-open .header__btnlink {
     }
 }
 
-@supports (width: clamp( 13.75rem , 10.7954545455rem  +  14.7727272727vw , 21.875rem )) {
+@supports (width: clamp( 12.5rem , 9.0909090909rem  +  17.0454545455vw , 21.875rem )) {
     .team__picture {
-      width: clamp( 13.75rem , 10.7954545455rem  +  14.7727272727vw , 21.875rem );
+      width: clamp( 12.5rem , 9.0909090909rem  +  17.0454545455vw , 21.875rem );
     }
 }
 
-@supports not (width: clamp( 13.75rem , 10.7954545455rem  +  14.7727272727vw , 21.875rem )) {
+@supports not (width: clamp( 12.5rem , 9.0909090909rem  +  17.0454545455vw , 21.875rem )) {
     .team__picture {
-      width: calc(13.75rem + 8.125 * (100vw - 20rem) / 55);
+      width: calc(12.5rem + 9.375 * (100vw - 20rem) / 55);
     }
 }
 
-@supports (height: clamp( 13.75rem , 10.7954545455rem  +  14.7727272727vw , 21.875rem )) {
+@supports (height: clamp( 12.5rem , 9.0909090909rem  +  17.0454545455vw , 21.875rem )) {
     .team__picture {
-      height: clamp( 13.75rem , 10.7954545455rem  +  14.7727272727vw , 21.875rem );
+      height: clamp( 12.5rem , 9.0909090909rem  +  17.0454545455vw , 21.875rem );
     }
 }
 
-@supports not (height: clamp( 13.75rem , 10.7954545455rem  +  14.7727272727vw , 21.875rem )) {
+@supports not (height: clamp( 12.5rem , 9.0909090909rem  +  17.0454545455vw , 21.875rem )) {
     .team__picture {
-      height: calc(13.75rem + 8.125 * (100vw - 20rem) / 55);
+      height: calc(12.5rem + 9.375 * (100vw - 20rem) / 55);
     }
 }
 
