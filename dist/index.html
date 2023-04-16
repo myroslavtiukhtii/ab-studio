@@ -6,29 +6,29 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230415193037">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230416200111">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap&_v=20230415193037" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap&_v=20230416200111" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap&_v=20230415193037" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap&_v=20230416200111" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap&_v=20230415193037" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap&_v=20230416200111" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap&_v=20230415193037" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap&_v=20230416200111" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap&_v=20230415193037" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap&_v=20230416200111" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap&_v=20230415193037" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230415193037" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap&_v=20230416200111" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?_v=20230416200111" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -47,14 +47,14 @@
 							<a class="header__link" href="#services">Services</a>
 						</li>
 						<li class="header__item">
-							<a class="header__link" href="#">Our Team</a>
+							<a class="header__link" href="#help">Help</a>
 						</li>
 						<li class="header__item">
-							<a class="header__link" href="#">Client</a>
+							<a class="header__link" href="#team">Client</a>
 						</li>
 					</ul>
 				</nav>
-				<a href="#" class="header__btnlink">
+				<a data-popup='#popup' href="#" class="header__btnlink">
 					Get Started
 					<div class="btnlink__arrow">
 						<svg>
@@ -85,7 +85,7 @@
 							It is a long established fact that a reader will be distracted by the readable content
 						</p>
 						<div class="about__buttons">
-							<a href="#" class="about__btnlink">
+							<a data-popup='#popup' href="#" class="about__btnlink">
 								Get Started
 								<div class="btnlink__arrow">
 									<svg>
@@ -186,7 +186,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="help">
+			<section class="help" id="help">
 				<div class="help__container">
 					<div class="help__picture">
 						<picture><source srcset="img/help/help-man.webp" type="image/webp"><img class="help__man item-3" src="img/help/help-man.png" alt="A happy man with a beard" title="A happy man with a beard" width="550" height="614"></picture>
@@ -215,7 +215,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="team">
+			<section class="team" id="team">
 				<div class="team__container">
 					<div class="team__text">
 						<div class="team__subtitle reveal fade-bottom">
@@ -227,7 +227,7 @@
 							<div class="team__contact__block">
 								<div class="team__contact__text">
 									<h3 class="team__contact__title">Email</h3>
-									<div class="team__contact__item">websunstudiodesign@gmail.com</div>
+									<div class="team__contact__item">websun@europe.com</div>
 								</div>
 								<div class="team__contact__link">
 									<svg>
@@ -282,7 +282,22 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20230415193037"></script>
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<h2 class="popup__title">Get 20% Off your first order</h2>
+				<div class="popup__text">
+					<form action="files/sendmail/sendmail.php" method="POST" class="help__mail">
+						<div class="help__shadow"></div>
+						<input class="help__input" data-error="Error" required type="email" placeholder="@ Your Email">
+						<button class="help__btn" type="submit">Contact Us</button>
+					</form>
+				</div>
+				<button data-close type="button" class="popup__close">Close</button>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230416200111"></script>
 </body>
 
 </html>
