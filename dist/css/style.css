@@ -1452,6 +1452,32 @@ html.menu-open .header__btnlink {
   z-index: -1;
 }
 
+.help__mail._error {
+  -webkit-box-shadow: 0 0 15px red;
+          box-shadow: 0 0 15px red;
+}
+
+.help__mail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(219, 192, 92, 0.4235294118) url(../img/form/loading.gif) center/50px no-repeat;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.help__mail._sending::after {
+  visibility: visible;
+  opacity: 1;
+}
+
 .help__input {
   width: 100%;
   font-family: "Inter";

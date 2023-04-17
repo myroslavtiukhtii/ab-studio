@@ -3215,6 +3215,58 @@
         DARKBTN.classList.toggle("active");
         if (DARKBTN.classList.contains("active")) TEXT.innerHTML = "Black"; else TEXT.innerHTML = "White";
     }
+    const FORM = document.querySelector(".help__mail");
+    FORM.addEventListener("submit", formSend);
+    async function formSend(e) {
+        e.preventDefault();
+        let error = script_formValidate(FORM);
+        let formData = new FormData(FORM);
+        if (0 === error) {
+            FORM.classList.add("_sending");
+            let response = await fetch("sendmail.php", {
+                method: "POST",
+                body: formData
+            });
+            if (response.ok) {
+                let result = await response.json();
+                alert(result.message);
+                FORM.reset();
+                FORM.classList.remove("_sending");
+            } else {
+                alert("error");
+                FORM.classList.remove("_sending");
+            }
+        } else alert("please write the correct name of your email address");
+    }
+    function script_formValidate(form) {
+        let error = 0;
+        let formReq = document.querySelectorAll("._req");
+        for (let index = 0; index < formReq.length; index++) {
+            const input = formReq[index];
+            formRemoveError(input);
+            if (input.classList.contains("_email")) {
+                if (emailTest(input)) {
+                    formAddError(input);
+                    error++;
+                }
+            } else if ("" === input.value) {
+                formAddError(input);
+                error++;
+            }
+        }
+        return error;
+    }
+    function formAddError(input) {
+        input.parentElement.classList.add("_error");
+        input.classList.add("_error");
+    }
+    function formRemoveError(input) {
+        input.parentElement.classList.remove("_error");
+        input.classList.remove("_error");
+    }
+    function emailTest(input) {
+        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
     window["FLS"] = true;
     isWebp();
     menuInit();

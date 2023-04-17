@@ -8,7 +8,7 @@
 
 	$mail = new PHPMailer(true);
 	$mail->CharSet = 'UTF-8';
-	$mail->setLanguage('ru', 'phpmailer/language/');
+	$mail->setLanguage('uk', 'phpmailer/language/');
 	$mail->IsHTML(true);
 
 	/*
@@ -22,18 +22,18 @@
 	*/
 
 	//Від кого лист
-	$mail->setFrom('from@gmail.com', 'Фрілансер по життю'); // Вказати потрібний E-mail
+	$mail->setFrom('admin@websun.com', 'WBsun admin'); // Вказати потрібний E-mail
 	//Кому відправити
-	$mail->addAddress('websunstudiodesign@gmail.com'); // Вказати потрібний E-mail
+	$mail->addAddress('websun@europe.com'); // Вказати потрібний E-mail
 	//Тема листа
-	$mail->Subject = 'Вітання! Це "Фрілансер по життю"';
+	$mail->Subject = 'Hi, you have new mail from site';
 
 	//Тіло листа
 	$body = '<h1>Зустрічайте супер листа!</h1>';
 
-	//if(trim(!empty($_POST['email']))){
-		//$body.=$_POST['email'];
-	//}	
+	if(trim(!empty($_POST['email']))){
+		$body.='<p><strong>E-mail:</strong> '$_POST['email'].'</p>';
+	}	
 	
 	/*
 	//Прикріпити файл
