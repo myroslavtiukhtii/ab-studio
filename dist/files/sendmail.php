@@ -32,7 +32,7 @@
 	$body = '<h1>Зустрічайте супер листа!</h1>';
 
 	if(trim(!empty($_POST['email']))){
-		$body.='<p><strong>E-mail:</strong> '$_POST['email'].'</p>';
+		$body.='<p><strong>E-mail:</strong> '.$_POST['email'].'</p>';
 	}	
 	
 	/*

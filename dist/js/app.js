@@ -3223,7 +3223,7 @@
         let formData = new FormData(FORM);
         if (0 === error) {
             FORM.classList.add("_sending");
-            let response = await fetch("sendmail.php", {
+            let response = await fetch("../files/sendmail.php", {
                 method: "POST",
                 body: formData
             });
@@ -3233,16 +3233,17 @@
                 FORM.reset();
                 FORM.classList.remove("_sending");
             } else {
+                console.log(response);
                 alert("error");
                 FORM.classList.remove("_sending");
             }
         } else alert("please write the correct name of your email address");
     }
-    function script_formValidate(form) {
+    function script_formValidate(FORM) {
         let error = 0;
         let formReq = document.querySelectorAll("._req");
-        for (let index = 0; index < formReq.length; index++) {
-            const input = formReq[index];
+        for (let i = 0; i < formReq.length; i++) {
+            const input = formReq[i];
             formRemoveError(input);
             if (input.classList.contains("_email")) {
                 if (emailTest(input)) {
