@@ -439,9 +439,6 @@ html.menu-open .header__btnlink {
   padding: 14px 20px;
   text-shadow: -5px 0px 0px #000000;
   border: 3.23692px solid #000000;
-  -webkit-transition: 0.3s ease-in;
-  -o-transition: 0.3s ease-in;
-  transition: 0.3s ease-in;
   -webkit-animation: titleTransition 0.3s linear forwards;
           animation: titleTransition 0.3s linear forwards;
 }
@@ -673,11 +670,6 @@ html.menu-open .header__btnlink {
           animation: codeTransition 1s linear forwards;
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
-}
-
-.about__image {
-  -webkit-animation: imageMain 0.3s linear forwards;
-          animation: imageMain 0.3s linear forwards;
 }
 
 .no-webp .about__longline{

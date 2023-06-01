@@ -3268,6 +3268,32 @@
     function emailTest(input) {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
     }
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".about__title",
+            start: "top top",
+            end: "bottom center",
+            scrub: 1,
+            pin: false
+        }
+    }).to(".about__title", {
+        scale: .5,
+        duration: 2
+    });
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".service__item",
+            start: "top center",
+            end: "bottom center",
+            scrub: 1,
+            pin: false
+        }
+    }).from(".service__item", {
+        scale: .5,
+        duration: 9,
+        delay: 3
+    });
     window["FLS"] = true;
     isWebp();
     menuInit();
